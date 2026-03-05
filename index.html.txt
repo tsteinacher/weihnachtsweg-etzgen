@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weihnachtsweg Etzgen</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Weihnachtsweg Etzgen</h1>
+<nav>
+<a href="index.html">Start</a>
+<a href="weg.html">Der Weg</a>
+<a href="galerie.html">Galerie</a>
+<a href="kontakt.html">Kontakt</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Ein stimmungsvoller Spaziergang durch die Weihnachtsgeschichte</h2>
+<p>Der Weihnachtsweg in Etzgen lädt Gross und Klein ein, die Weihnachtsgeschichte auf einem gemütlichen Spaziergang zu erleben.</p>
+</section>
+
+<section class="content">
+
+<h3>Willkommen</h3>
+
+<p>
+Der Weihnachtsweg in Etzgen ist ein besonderes Erlebnis in der Adventszeit.
+Entlang eines liebevoll gestalteten Weges entdecken Besucher verschiedene
+Stationen der Weihnachtsgeschichte.
+</p>
+
+<p>
+Der Weg eignet sich für Familien, Spaziergänger und alle,
+die die Adventszeit in ruhiger Atmosphäre erleben möchten.
+</p>
+
+</section>
+
+<footer>
+<p>© Weihnachtsweg Etzgen</p>
+</footer>
+
+</body>
+</html>
