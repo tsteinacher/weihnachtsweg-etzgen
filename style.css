@@ -78,10 +78,11 @@ header nav a:hover {
   background: rgba(255,255,255,0.85);
   padding: 40px 20px;
   max-width: 900px;
-  margin: -40px auto 40px auto;
+  margin: 40px auto; /* oben/unten 40px, horizontal auto → Block horizontal zentriert */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  text-align: center;
+  text-align: center; /* Text zentriert */
+  display: block; /* stellt sicher, dass Block-Breite angewendet wird */
 }
 
 /* --- Inhalt --- */
@@ -174,6 +175,7 @@ button:hover, .btn:hover {
     padding: 20px;
   }
 }
+
 
 
 
