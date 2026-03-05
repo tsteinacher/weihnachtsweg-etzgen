@@ -6,10 +6,11 @@ body {
   color: #333;
   line-height: 1.6;
 }
-/* --- Header mit grauem Hintergrund --- */
+/* --- Header mit Weihnachtsweg-Flyer Bild + Overlay --- */
 header {
   position: relative;
-  background: #666666; /* grauer Hintergrund */
+  background: url('images/weihnachtsweg-flyer.jpg') no-repeat center center;
+  background-size: cover;
   color: white;
   padding: 80px 20px 40px 20px;
   text-align: center;
@@ -17,6 +18,18 @@ header {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35); /* leichtes Overlay für Lesbarkeit */
+  z-index: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 header h1, header nav {
@@ -27,7 +40,7 @@ header h1, header nav {
 header h1 {
   font-size: 3em;
   margin: 0;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* leichter Schatten für bessere Lesbarkeit */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
 
 header nav {
@@ -56,6 +69,8 @@ header nav a:hover {
   header nav a {
     display: block;
     margin: 10px 0;
+  }
+}
   }
 }
 /* --- Hero Abschnitt --- */
@@ -159,6 +174,7 @@ button:hover, .btn:hover {
     padding: 20px;
   }
 }
+
 
 
 
