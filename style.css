@@ -9,7 +9,7 @@ body {
 /* --- Header mit Weihnachtsweg-Flyer Bild + Overlay --- */
 header {
   position: relative;
-  background: url('images/weihnachtsweg-flyer.jpg') no-repeat center 35%;
+  background: url('images/weihnachtsweg-flyer_new.jpg.jpg') no-repeat center 35%;
   background-size: cover;
   color: white;
   min-height: 70vh;            /* gives the image space instead of a thin strip */
@@ -60,7 +60,7 @@ header nav a {
 }
 
 header nav a:hover {
-  color: #ffdd00; /* goldener Hover-Effekt */
+  color: #f5c542; /* goldener Hover-Effekt */
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
