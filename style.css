@@ -6,24 +6,22 @@ body {
   color: #333;
   line-height: 1.6;
 }
-/* --- Header mit Weihnachtsweg-Flyer Bild + Overlay --- */
+
+/* --- Header mit Weihnachtsweg-Bild + Overlay --- */
 header {
   position: relative;
-  background: url('images/weihnachtsweg-flyer_new.jpg.jpg') no-repeat center 25%;
-  background-size: cover;
+  /* Dateiname ggf. an die Datei auf dem Server anpassen */
+  background: url('images/weihnachtsweg-flyer_new.jpg.jpg') no-repeat center center;
+  background-size: contain;        /* ganzes Bild sichtbar, kein Beschnitt */
+  background-color: #5b5ba6;       /* füllt die Seitenränder im Blau des Bildes */
   color: white;
-  min-height: 70vh;            /* gives the image space instead of a thin strip */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 80px 20px 40px;
+  padding: 80px 20px 40px 20px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   overflow: hidden;
 }
-
 header::before {
   content: "";
   position: absolute;
@@ -35,22 +33,18 @@ header::before {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-
 header h1, header nav {
   position: relative;
   z-index: 1;
 }
-
 header h1 {
   font-size: 3em;
   margin: 0;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
-
 header nav {
   margin-top: 20px;
 }
-
 header nav a {
   color: white;
   margin: 0 15px;
@@ -58,35 +52,21 @@ header nav a {
   font-weight: 600;
   transition: all 0.3s ease;
 }
-
 header nav a:hover {
-  color: #f5c542; /* goldener Hover-Effekt */
+  color: #f5c542; /* warmer Gold-Hover, passend zum Bild */
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2em;
-  }
-
-  header nav a {
-    display: block;
-    margin: 10px 0;
-  }
-}
-  }
-}
 /* --- Hero Abschnitt --- */
 .hero {
   background: rgba(255,255,255,0.85);
   padding: 40px 20px;
   max-width: 900px;
-  margin: 40px auto; /* oben/unten 40px, horizontal auto → Block horizontal zentriert */
+  margin: 40px auto; /* horizontal zentriert */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  text-align: center; /* Text zentriert */
-  display: block; /* stellt sicher, dass Block-Breite angewendet wird */
+  text-align: center;
+  display: block;
 }
 
 /* --- Inhalt --- */
@@ -103,19 +83,16 @@ header nav a:hover {
   padding: 0 20px;
   text-align: center;
 }
-
 .gallery-section h2 {
   font-size: 2.5em;
   margin-bottom: 20px;
   color: #333;
 }
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
-
 .gallery img {
   width: 100%;
   border-radius: 12px;
@@ -123,17 +100,9 @@ header nav a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
-
 .gallery img:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-}
-
-/* Mobile Anpassungen */
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* --- Footer --- */
@@ -158,7 +127,6 @@ button, .btn {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 button:hover, .btn:hover {
   background: #228B22;
 }
@@ -168,18 +136,18 @@ button:hover, .btn:hover {
   header h1 {
     font-size: 2em;
   }
-
   header nav a {
     display: block;
     margin: 10px 0;
   }
-
   .hero {
     margin: 20px auto;
     padding: 20px;
   }
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 }
-
 
 
 
