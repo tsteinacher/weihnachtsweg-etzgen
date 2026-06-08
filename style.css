@@ -130,10 +130,11 @@ button:hover, .btn:hover {
   background: #228B22;
 }
 
-/* --- Desktop: sinnvoller Bildausschnitt für den Banner --- */
+/* --- Desktop: höherer Banner + Ausschnitt auf die Gesichter --- */
 @media (min-width: 769px) {
   header {
-    background-position: center 58%; /* legt den Streifen auf die Figuren */
+    min-height: 450px;             /* höherer Banner → Gesichter komplett sichtbar */
+    background-position: center 55%;
   }
 }
 
