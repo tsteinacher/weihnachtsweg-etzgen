@@ -1,245 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weihnachtsweg Etzgen</title>
 
-/* --- Grundlegende Schrift und Layout --- */
-* {
-  box-sizing: border-box;
-}
+<!-- Stylesheet -->
+<link rel="stylesheet" href="style.css">
 
-html {
-  scroll-behavior: smooth;
-}
+<!-- Favicon -->
+<link rel="icon" href="images/favicon.png" type="image/png">
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  background: #f7f7fb;
-  color: #333;
-  line-height: 1.6;
-}
+</head>
 
-/* --- Header --- */
-.site-header {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(180deg, #4f5da8 0%, #6d79c8 100%);
-  color: white;
-  padding: 50px 20px 45px;
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-}
+<body>
 
-.header-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 35%),
-    radial-gradient(circle at top right, rgba(255,255,255,0.10), transparent 30%);
-  pointer-events: none;
-}
+<header>
+<h1>Weihnachtsweg Etzgen</h1>
+<nav>
+<a href="index.html">Start</a>
+<a href="weg.html">Der Weg</a>
+<a href="galerie.html">Galerie</a>
+<a href="kontakt.html">Kontakt</a>
+</nav>
+</header>
 
-.header-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-}
+<section class="content">
+<h2>Ein stimmungsvoller Spaziergang durch die Weihnachtsgeschichte</h2>
 
-.header-text {
-  margin-bottom: 30px;
-}
+<p>
+Der Weihnachtsweg in Etzgen findet im Dezember 2026 zum zweiten Mal statt und ist ein besonderes Erlebnis in der Adventszeit.
+Entlang eines liebevoll gestalteten Weges entdecken Besucher und Besucherinnen verschiedene
+Stationen der Weihnachtsgeschichte.
+</p>
 
-.header-text h1 {
-  margin: 0;
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
-  line-height: 1.1;
-  text-shadow: 0 3px 10px rgba(0,0,0,0.25);
-  letter-spacing: 0.3px;
-}
+<p>
+Der Weg eignet sich für Familien, Spaziergänger und alle,
+die die Adventszeit in ruhiger Atmosphäre erleben möchten.
+</p>
 
-.subtitle {
-  margin: 14px auto 24px;
-  max-width: 760px;
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.95);
-}
+</section>
 
-/* --- Navigation --- */
-.main-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px;
-}
+<footer>
+<p>© Weihnachtsweg Etzgen</p>
+</footer>
 
-.main-nav a {
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.10);
-  backdrop-filter: blur(2px);
-  transition: all 0.25s ease;
-}
-
-.main-nav a:hover {
-  background: rgba(255,255,255,0.20);
-  color: #ffe28a;
-  transform: translateY(-1px);
-}
-
-/* --- Bildkarte im Header --- */
-.header-image-card {
-  max-width: 760px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 22px;
-  padding: 14px;
-  box-shadow: 0 12px 34px rgba(0,0,0,0.22);
-}
-
-.header-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-}
-
-/* --- Hero Abschnitt --- */
-.hero {
-  background: rgba(255,255,255,0.92);
-  padding: 40px 24px;
-  max-width: 900px;
-  margin: 36px auto 0;
-  border-radius: 16px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.10);
-  text-align: center;
-}
-
-.hero h2 {
-  margin-top: 0;
-  color: #2f376f;
-}
-
-/* --- Inhalt --- */
-.content {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-.content h2 {
-  color: #2f376f;
-  margin-top: 0;
-}
-
-/* --- Galerie --- */
-.gallery-section {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.gallery-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  color: #2f376f;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-
-.gallery img {
-  width: 100%;
-  display: block;
-  border-radius: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.14);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.20);
-}
-
-/* --- Buttons --- */
-button,
-.btn {
-  background: #2f6f3e;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-button:hover,
-.btn:hover {
-  background: #3d8a4f;
-}
-
-/* --- Footer --- */
-footer {
-  background: #222;
-  color: #eee;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-/* --- Responsive --- */
-@media (max-width: 768px) {
-  .site-header {
-    padding: 34px 16px 30px;
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
-
-  .main-nav {
-    gap: 10px;
-  }
-
-  .main-nav a {
-    padding: 9px 14px;
-    font-size: 0.95rem;
-  }
-
-  .header-image-card {
-    padding: 10px;
-    border-radius: 18px;
-  }
-
-  .hero {
-    margin: 24px 16px 0;
-    padding: 28px 18px;
-  }
-
-  .content {
-    padding: 30px 16px;
-  }
-
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-}
-``
-
-
-
+</body>
+</html>
 
