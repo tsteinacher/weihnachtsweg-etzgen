@@ -10,8 +10,8 @@ body {
 /* --- Header mit Weihnachtsweg-Bild + Overlay (Banner) --- */
 header {
   position: relative;
-  /* Dateiname ggf. an die Datei auf dem Server anpassen */
-  background: url('images/weihnachtsweg-flyer_2.jpg') no-repeat center center;
+  /* Dateiname an die Datei auf dem Server anpassen */
+  background: url('images/weihnachtsweg-banner.jpg') no-repeat center center;
   background-size: cover;
   color: white;
   padding: 80px 20px 40px 20px;
@@ -27,7 +27,7 @@ header::before {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.35); /* leichtes Overlay für Lesbarkeit */
+  background: rgba(0,0,0,0.40); /* etwas stärker, da das Bild hell ist */
   z-index: 0;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -133,7 +133,7 @@ button:hover, .btn:hover {
 /* --- Desktop: sinnvoller Bildausschnitt für den Banner --- */
 @media (min-width: 769px) {
   header {
-    background-position: center 30%; /* zeigt Gesicht + Esel statt nur Mitte */
+    background-position: center 58%; /* legt den Streifen auf die Figuren */
   }
 }
 
