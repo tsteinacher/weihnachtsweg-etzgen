@@ -1,50 +1,166 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weihnachtsweg Etzgen</title>
+/* --- Grundlegende Schrift und Layout --- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
 
-<!-- Stylesheet -->
-<link rel="stylesheet" href="style.css">
+/* --- Header mit Weihnachtsweg-Bild (Blur-Backdrop) --- */
+header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 60vh;
+  color: white;
+  padding: 80px 20px 40px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+  background-color: #3a3a6e; /* Fallback, falls Bild nicht lädt */
+}
+/* unscharfer, gezoomter Hintergrund füllt die Seitenränder */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Dateiname ggf. an die Datei auf dem Server anpassen */
+  background: url('images/weihnachtsweg-flyer_new.jpg.jpg') no-repeat center center;
+  background-size: cover;
+  filter: blur(28px) brightness(0.6);
+  transform: scale(1.15); /* verdeckt die weichen Blur-Ränder */
+  z-index: 0;
+}
+/* scharfes, vollständiges Bild mittig + leichtes Overlay für Lesbarkeit */
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.40)),
+    url('images/weihnachtsweg-flyer_new.jpg.jpg') no-repeat center center;
+  background-size: cover, contain;
+  z-index: 1;
+}
+header h1, header nav {
+  position: relative;
+  z-index: 2;
+}
+header h1 {
+  font-size: 3em;
+  margin: 0;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+header nav {
+  margin-top: 20px;
+}
+header nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+header nav a:hover {
+  color: #f5c542; /* warmer Gold-Hover, passend zum Bild */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
 
-<!-- Favicon -->
-<link rel="icon" href="images/favicon.png" type="image/png">
+/* --- Hero Abschnitt --- */
+.hero {
+  background: rgba(255,255,255,0.85);
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+  display: block;
+}
 
-</head>
+/* --- Inhalt --- */
+.content {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
 
-<body>
+/* --- Galerie --- */
+.gallery-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.gallery-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
 
-<header>
-<h1>Weihnachtsweg Etzgen</h1>
-<nav>
-<a href="index.html">Start</a>
-<a href="weg.html">Der Weg</a>
-<a href="galerie.html">Galerie</a>
-<a href="kontakt.html">Kontakt</a>
-</nav>
-</header>
+/* --- Footer --- */
+footer {
+  background: #222;
+  color: #eee;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
 
-<section class="content">
-<h2>Ein stimmungsvoller Spaziergang durch die Weihnachtsgeschichte</h2>
+/* --- Buttons --- */
+button, .btn {
+  background: #006400;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover, .btn:hover {
+  background: #228B22;
+}
 
-<p>
-Der Weihnachtsweg in Etzgen findet im Dezember 2026 zum zweiten Mal statt und ist ein besonderes Erlebnis in der Adventszeit.
-Entlang eines liebevoll gestalteten Weges entdecken Besucher und Besucherinnen verschiedene
-Stationen der Weihnachtsgeschichte.
-</p>
-
-<p>
-Der Weg eignet sich für Familien, Spaziergänger und alle,
-die die Adventszeit in ruhiger Atmosphäre erleben möchten.
-</p>
-
-</section>
-
-<footer>
-<p>© Weihnachtsweg Etzgen</p>
-</footer>
-
-</body>
-</html>
-
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  header {
+    min-height: 50vh;
+  }
+  header h1 {
+    font-size: 2em;
+  }
+  header nav a {
+    display: block;
+    margin: 10px 0;
+  }
+  .hero {
+    margin: 20px auto;
+    padding: 20px;
+  }
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
