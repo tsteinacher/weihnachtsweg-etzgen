@@ -9,10 +9,14 @@ body {
 /* --- Header mit Weihnachtsweg-Flyer Bild + Overlay --- */
 header {
   position: relative;
-  background: url('images/weihnachtsweg-flyer_new.jpg.jpg') no-repeat center center;
+  background: url('images/weihnachtsweg-flyer.jpg') no-repeat center 35%;
   background-size: cover;
   color: white;
-  padding: 80px 20px 40px 20px;
+  min-height: 70vh;            /* gives the image space instead of a thin strip */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 20px 40px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   border-bottom-left-radius: 20px;
