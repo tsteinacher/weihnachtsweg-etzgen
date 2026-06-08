@@ -11,7 +11,7 @@ body {
 header {
   position: relative;
   /* Dateiname ggf. an die Datei auf dem Server anpassen */
-  background: url('images/weihnachtsweg-flyer_new.jpg.jpg') no-repeat center center;
+  background: url('images/weihnachtsweg-flyer_2.jpg') no-repeat center center;
   background-size: cover;
   color: white;
   padding: 80px 20px 40px 20px;
