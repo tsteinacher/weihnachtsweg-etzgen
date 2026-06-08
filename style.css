@@ -1,72 +1,127 @@
+
 /* --- Grundlegende Schrift und Layout --- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  background: #f9f9f9;
+  background: #f7f7fb;
   color: #333;
   line-height: 1.6;
 }
 
-/* --- Header mit Weihnachtsweg-Bild + Overlay --- */
-header {
+/* --- Header --- */
+.site-header {
   position: relative;
-  /* Dateiname ggf. an die Datei auf dem Server anpassen */
-  background: url('images/weihnachtsweg-flyer_new.jpg.jpg') no-repeat center center;
-  background-size: contain;        /* ganzes Bild sichtbar, kein Beschnitt */
-  background-color: #5b5ba6;       /* füllt die Seitenränder im Blau des Bildes */
-  color: white;
-  padding: 80px 20px 40px 20px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
   overflow: hidden;
+  background: linear-gradient(180deg, #4f5da8 0%, #6d79c8 100%);
+  color: white;
+  padding: 50px 20px 45px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
-header::before {
-  content: "";
+
+.header-overlay {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.35); /* leichtes Overlay für Lesbarkeit */
-  z-index: 0;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 35%),
+    radial-gradient(circle at top right, rgba(255,255,255,0.10), transparent 30%);
+  pointer-events: none;
 }
-header h1, header nav {
+
+.header-inner {
   position: relative;
   z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
 }
-header h1 {
-  font-size: 3em;
+
+.header-text {
+  margin-bottom: 30px;
+}
+
+.header-text h1 {
   margin: 0;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.25);
+  letter-spacing: 0.3px;
 }
-header nav {
-  margin-top: 20px;
+
+.subtitle {
+  margin: 14px auto 24px;
+  max-width: 760px;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.95);
 }
-header nav a {
+
+/* --- Navigation --- */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.main-nav a {
+  display: inline-block;
   color: white;
-  margin: 0 15px;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(2px);
+  transition: all 0.25s ease;
 }
-header nav a:hover {
-  color: #f5c542; /* warmer Gold-Hover, passend zum Bild */
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+
+.main-nav a:hover {
+  background: rgba(255,255,255,0.20);
+  color: #ffe28a;
+  transform: translateY(-1px);
+}
+
+/* --- Bildkarte im Header --- */
+.header-image-card {
+  max-width: 760px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 22px;
+  padding: 14px;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.22);
+}
+
+.header-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
 }
 
 /* --- Hero Abschnitt --- */
 .hero {
-  background: rgba(255,255,255,0.85);
-  padding: 40px 20px;
+  background: rgba(255,255,255,0.92);
+  padding: 40px 24px;
   max-width: 900px;
-  margin: 40px auto; /* horizontal zentriert */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin: 36px auto 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.10);
   text-align: center;
-  display: block;
+}
+
+.hero h2 {
+  margin-top: 0;
+  color: #2f376f;
 }
 
 /* --- Inhalt --- */
@@ -76,6 +131,11 @@ header nav a:hover {
   padding: 40px 20px;
 }
 
+.content h2 {
+  color: #2f376f;
+  margin-top: 0;
+}
+
 /* --- Galerie --- */
 .gallery-section {
   max-width: 1000px;
@@ -83,26 +143,48 @@ header nav a:hover {
   padding: 0 20px;
   text-align: center;
 }
+
 .gallery-section h2 {
-  font-size: 2.5em;
+  font-size: 2.2rem;
   margin-bottom: 20px;
-  color: #333;
+  color: #2f376f;
 }
+
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
+
 .gallery img {
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.14);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 .gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transform: scale(1.02);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.20);
+}
+
+/* --- Buttons --- */
+button,
+.btn {
+  background: #2f6f3e;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: #3d8a4f;
 }
 
 /* --- Footer --- */
@@ -116,39 +198,47 @@ footer {
   border-top-right-radius: 20px;
 }
 
-/* --- Buttons --- */
-button, .btn {
-  background: #006400;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-button:hover, .btn:hover {
-  background: #228B22;
-}
-
 /* --- Responsive --- */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 2em;
+  .site-header {
+    padding: 34px 16px 30px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
   }
-  header nav a {
-    display: block;
-    margin: 10px 0;
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
   }
+
+  .main-nav {
+    gap: 10px;
+  }
+
+  .main-nav a {
+    padding: 9px 14px;
+    font-size: 0.95rem;
+  }
+
+  .header-image-card {
+    padding: 10px;
+    border-radius: 18px;
+  }
+
   .hero {
-    margin: 20px auto;
-    padding: 20px;
+    margin: 24px 16px 0;
+    padding: 28px 18px;
   }
+
+  .content {
+    padding: 30px 16px;
+  }
+
   .gallery {
     grid-template-columns: 1fr;
   }
 }
-
+``
 
 
 
