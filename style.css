@@ -133,7 +133,7 @@ button:hover, .btn:hover {
 /* --- Desktop: sinnvoller Bildausschnitt für den Banner --- */
 @media (min-width: 769px) {
   header {
-    background-position: center 35%; /* zeigt Gesicht + Esel statt nur Mitte */
+    background-position: center 30%; /* zeigt Gesicht + Esel statt nur Mitte */
   }
 }
 
