@@ -92,7 +92,7 @@ header nav a.active {
   margin: 40px auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-  text-align: center;
+  text-align: left;
   display: block;
 }
 .hero h2 {
@@ -100,6 +100,9 @@ header nav a.active {
 }
 .hero .lead {
   font-size: 1.1em;
+}
+.hero .btn-row {
+  justify-content: flex-start;
 }
 
 /* --- Info-Karten (Daten, Öffnungszeiten, Ort) --- */
